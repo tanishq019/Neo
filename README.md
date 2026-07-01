@@ -18,12 +18,12 @@ NEO is an enterprise-grade, high-performance, and fully dynamic music streaming 
 
 ## 📖 Table of Contents
 
-1. [Platform Architecture](#-platform-architecture)
-2. [Key Core Systems](#-key-core-systems)
-3. [Technology Stack](#%EF%B8%8F-technology-stack)
-4. [Internal Documentation Catalog](#%EF%B8%8F-internal-documentation-catalog)
-5. [Getting Started & Installation](#-getting-started--installation)
-6. [Roadmap & Development Status](#%EF%B8%8F-roadmap--development-status)
+1. [Platform Architecture](#platform-architecture)
+2. [Key Core Systems](#key-core-systems)
+3. [Technology Stack](#technology-stack)
+4. [Internal Documentation Catalog](#internal-documentation-catalog)
+5. [Getting Started & Installation](#getting-started--installation)
+6. [Roadmap & Development Status](#roadmap-development-status)
 
 ---
 
@@ -71,7 +71,7 @@ graph TD
     RecEngine --> Postgres
 ```
 
-See [ARCHITECTURE.md](file:///d:/GitHub/Neo/ARCHITECTURE.md) for more details on core entity layouts and runtime infrastructure.
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for more details on core entity layouts and runtime infrastructure.
 
 ---
 
@@ -116,7 +116,7 @@ Tracks user queries and system usage for content discovery optimization.
 - **Design System**: NeoTheme (Glassmorphism & dark-mode aesthetic)
 
 ### 🔹 Mobile Client
-- **Framework**: Flutter & Dart (configured in [pubspec.yaml](file:///d:/GitHub/Neo/pubspec.yaml))
+- **Framework**: Flutter & Dart (configured in [pubspec.yaml](./pubspec.yaml))
 - **Networking**: `dio` (configured with automated `AuthInterceptor` & JWT Refresh pipeline)
 - **Secure Storage**: `flutter_secure_storage` for credentials and auth token rotation
 - **State Management**: `provider` for structured dependency injection and reactive state updating
@@ -124,21 +124,21 @@ Tracks user queries and system usage for content discovery optimization.
 
 ---
 
-## 🗃️ Technology Stack (Internal Docs Catalog)
+## 🗃️ Internal Documentation Catalog
 
 For deep-dive topics, consult our internal architectural tracking sheets:
 
 | Document | Target Area & Description |
 | :--- | :--- |
-| 🏗️ [ARCHITECTURE.md](file:///d:/GitHub/Neo/ARCHITECTURE.md) | High-level system topology, module descriptions, and chunked upload pipelines. |
-| 🔌 [API_DOCUMENTATION.md](file:///d:/GitHub/Neo/API_DOCUMENTATION.md) | REST Endpoint registry spanning CMS Homepage, Upload Center, Playlists, and Unified Search. |
-| 🗄️ [DATABASE_SCHEMA.md](file:///d:/GitHub/Neo/DATABASE_SCHEMA.md) | Tables, relationships, junction matrices, and analytics schema (PostgreSQL representation). |
-| 🛣️ [ROADMAP.md](file:///d:/GitHub/Neo/ROADMAP.md) | Phase 1 backend completion tracker & Phase 2 Flutter Client milestone tracker. |
-| 🚦 [TESTING.md](file:///d:/GitHub/Neo/TESTING.md) | Runtime validation logs, build compilation metrics, and edge-case verification notes. |
-| 🔒 [SECURITY.md](file:///d:/GitHub/Neo/SECURITY.md) | Authentication middleware design, RBAC guard flow, and file upload mitigation protocols. |
-| 📈 [PERFORMANCE.md](file:///d:/GitHub/Neo/PERFORMANCE.md) | Identifies runtime bottlenecks (e.g. event loop blocking in recommendations) and mitigation strategies. |
-| 🛠️ [TECH_DEBT.md](file:///d:/GitHub/Neo/TECH_DEBT.md) | Lists prioritised engineering improvements (e.g. replacing `synchronize: true` TypeORM configuration). |
-| 🏷️ [RELEASE_NOTES.md](file:///d:/GitHub/Neo/RELEASE_NOTES.md) & [CHANGELOG.md](file:///d:/GitHub/Neo/CHANGELOG.md) | Archive of feature additions, engine updates, and release tracking. |
+| 🏗️ [ARCHITECTURE.md](./ARCHITECTURE.md) | High-level system topology, module descriptions, and chunked upload pipelines. |
+| 🔌 [API_DOCUMENTATION.md](./API_DOCUMENTATION.md) | REST Endpoint registry spanning CMS Homepage, Upload Center, Playlists, and Unified Search. |
+| 🗄️ [DATABASE_SCHEMA.md](./DATABASE_SCHEMA.md) | Tables, relationships, junction matrices, and analytics schema (PostgreSQL representation). |
+| 🛣️ [ROADMAP.md](./ROADMAP.md) | Phase 1 backend completion tracker & Phase 2 Flutter Client milestone tracker. |
+| 🚦 [TESTING.md](./TESTING.md) | Runtime validation logs, build compilation metrics, and edge-case verification notes. |
+| 🔒 [SECURITY.md](./SECURITY.md) | Authentication middleware design, RBAC guard flow, and file upload mitigation protocols. |
+| 📈 [PERFORMANCE.md](./PERFORMANCE.md) | Identifies runtime bottlenecks (e.g. event loop blocking in recommendations) and mitigation strategies. |
+| 🛠️ [TECH_DEBT.md](./TECH_DEBT.md) | Lists prioritised engineering improvements (e.g. replacing `synchronize: true` TypeORM configuration). |
+| 🏷️ [RELEASE_NOTES.md](./RELEASE_NOTES.md) & [CHANGELOG.md](./CHANGELOG.md) | Archive of feature additions, engine updates, and release tracking. |
 
 ---
 
@@ -154,7 +154,7 @@ For deep-dive topics, consult our internal architectural tracking sheets:
 > Please check the respective `README.md` files inside the `/backend` and `/admin-dashboard` directories for detailed database configuration patterns, environment variable schemas, and troubleshooting guidelines.
 
 > [!IMPORTANT]
-> The Flutter client is currently in active development (Phase 2). Running `flutter run` will attempt to connect to the backend server. Refer to [ROADMAP.md](file:///d:/GitHub/Neo/ROADMAP.md) for the completion status of the playback engine and search services.
+> The Flutter client is currently in active development (Phase 2). Running `flutter run` will attempt to connect to the backend server. Refer to [ROADMAP.md](./ROADMAP.md) for the completion status of the playback engine and search services.
 
 ---
 
@@ -202,7 +202,7 @@ For deep-dive topics, consult our internal architectural tracking sheets:
    ```bash
    flutter doctor
    ```
-2. Fetch package dependencies declared in [pubspec.yaml](file:///d:/GitHub/Neo/pubspec.yaml):
+2. Fetch package dependencies declared in [pubspec.yaml](./pubspec.yaml):
    ```bash
    flutter pub get
    ```
@@ -215,7 +215,7 @@ For deep-dive topics, consult our internal architectural tracking sheets:
 
 ## 🗺️ Roadmap & Development Status
 
-For a complete breakdown of current progress and future engineering targets, see [ROADMAP.md](file:///d:/GitHub/Neo/ROADMAP.md).
+For a complete breakdown of current progress and future engineering targets, see [ROADMAP.md](./ROADMAP.md).
 
 ### Current Milestones (Phase 2):
 - [x] Set up robust API Network layer (`ApiClient` + `Dio` + token refresh pipeline).
