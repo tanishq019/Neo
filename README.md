@@ -15,10 +15,9 @@ NEO is an enterprise-grade, high-performance, and fully dynamic music streaming 
 1. [Platform Architecture](#-platform-architecture)
 2. [Key Core Systems](#-key-core-systems)
 3. [Technology Stack](#%EF%B8%8F-technology-stack)
-4. [Internal Documentation Catalog](#-internal-documentation-catalog)
+4. [Internal Documentation Catalog](#%EF%B8%8F-internal-documentation-catalog)
 5. [Getting Started & Installation](#-getting-started--installation)
-6. [Roadmap & Development Status](#-roadmap--development-status)
-7. [Contributing & Security](#-contributing--security)
+6. [Roadmap & Development Status](#%EF%B8%8F-roadmap--development-status)
 
 ---
 
@@ -28,25 +27,25 @@ The NEO Platform is designed around a three-tier headless architecture:
 
 ```mermaid
 graph TD
-    subgraph Client Layer
+    subgraph Client ["Client Layer"]
         FlutterApp[Flutter Mobile Client]
         NextDashboard[Next.js Admin Dashboard]
     end
 
-    subgraph Backend Core (NestJS API)
+    subgraph Backend ["Backend Core (NestJS API)"]
         AuthGuard[JWT & RBAC Guards]
         CMSEngine[CMS Engine]
         UploadQueue[Upload Pipeline]
         RecEngine[Recommendation Engine]
     end
 
-    subgraph Storage & Media Processing
+    subgraph Storage ["Storage & Media Processing"]
         FFmpeg[FFmpeg Audio Transcoder]
         Sharp[Sharp Image Processor]
         LocalStore[Chunked Media Storage]
     end
 
-    subgraph Database
+    subgraph Database ["Database"]
         Postgres[(PostgreSQL DB)]
     end
 
@@ -119,7 +118,7 @@ Tracks user queries and system usage for content discovery optimization.
 
 ---
 
-## 🗃️ Internal Documentation Catalog
+## 🗃️ Technology Stack (Internal Docs Catalog)
 
 For deep-dive topics, consult our internal architectural tracking sheets:
 
@@ -145,6 +144,12 @@ For deep-dive topics, consult our internal architectural tracking sheets:
 - [PostgreSQL](https://www.postgresql.org/) (>= 15.x)
 - [FFmpeg](https://ffmpeg.org/download.html) installed and added to your system's `PATH`.
 
+> [!NOTE]
+> Please check the respective `README.md` files inside the `/backend` and `/admin-dashboard` directories for detailed database configuration patterns, environment variable schemas, and troubleshooting guidelines.
+
+> [!IMPORTANT]
+> The Flutter client is currently in active development (Phase 2). Running `flutter run` will attempt to connect to the backend server. Refer to [ROADMAP.md](file:///d:/GitHub/Neo/ROADMAP.md) for the completion status of the playback engine and search services.
+
 ---
 
 ### 1. Backend API (NestJS)
@@ -154,7 +159,11 @@ For deep-dive topics, consult our internal architectural tracking sheets:
    cd backend
    npm install
    ```
-2. Configure your environment variables in `.env` (database connection strings, JWT secrets, port configs).
+2. Configure your environment variables by copying the template:
+   ```bash
+   cp .env.example .env
+   ```
+   *(Configure database connection strings, JWT secrets, and port configurations within `.env`)*
 3. Start the application in development mode:
    ```bash
    npm run start:dev
@@ -164,12 +173,16 @@ For deep-dive topics, consult our internal architectural tracking sheets:
 
 ### 2. Admin Dashboard (Next.js)
 
-1. Navigate to the frontend admin folder:
+1. Navigate to the frontend admin folder and install dependencies:
    ```bash
    cd admin-dashboard
    npm install
    ```
-2. Set up your `.env.local` to point to the NestJS API (default: `http://localhost:3000/api/v1`).
+2. Configure your environment variables by copying the template:
+   ```bash
+   cp .env.example .env.local
+   ```
+   *(Ensure it points to the NestJS API, default: `http://localhost:3000/api/v1`)*
 3. Start the hot-reloading development server:
    ```bash
    npm run dev
