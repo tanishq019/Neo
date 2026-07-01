@@ -1,5 +1,8 @@
 # 🪐 NEO Platform
 
+🔗 **[Access Live Demo / Production Website](https://neo-streaming-platform.example.com)**
+
+[![Website](https://img.shields.io/badge/Website-Live_Demo-brightgreen?style=for-the-badge&logo=google-chrome&logoColor=white)](https://neo-streaming-platform.example.com)
 [![Flutter](https://img.shields.io/badge/Flutter-3.44.0+-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
 [![NestJS](https://img.shields.io/badge/NestJS-Backend-E0234E?logo=nestjs&logoColor=white)](https://nestjs.com)
 [![Next.js](https://img.shields.io/badge/Next.js-Dashboard-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org)
@@ -7,6 +10,9 @@
 [![License](https://img.shields.io/badge/License-Proprietary-orange)](#)
 
 NEO is an enterprise-grade, high-performance, and fully dynamic music streaming and content distribution platform. Architected as a modern, decoupled ecosystem, NEO combines a robust modular NestJS backend, a Next.js CMS/Admin dashboard, and an optimized cross-platform Flutter mobile application.
+
+> [!TIP]
+> **Production Access:** You can access the live, deployed web application instantly at [**neo-streaming-platform.example.com**](https://neo-streaming-platform.example.com).
 
 ---
 
